@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio of [Your Name] - [Your Role]">
+    <title>rumais p p | Creative Software Developer</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="loading">
+    <canvas id="three-canvas"></canvas>
+
+    <section id="intro-section">
+        <h1 class="reveal-name">Rumais P P</h1>
+    </section>
+
+    <div id="main-wrapper">
+        <header id="header">
+            <nav>
+                <div class="logo">Rumais p p</div>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section id="hero">
+                <p class="hero-sub">CREATIVE SOFTWARE DEVELOPER</p>
+                <h1>Rumais P P</h1>
+                <p class="hero-desc">Building immersive, interactive digital experiences with precision and passion.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="primary-btn">View My Work</a>
+                    <a href="#" class="secondary-btn">Download CV</a>
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Personal Identity</h2>
+                        <p>I am a passionate Creative Software Developer with a focus on building immersive, highly
+                            interactive digital experiences. Currently pursuing a BCA, I specialize in blending
+                            engineering precision with creative design using Flutter, Three.js, and the MERN stack.</p>
+                    </div>
+                    <div class="education">
+                        <h3>Education</h3>
+                        <div class="edu-item">
+                            <span class="year">2023 - 2026</span>
+                            <p><strong>BCA</strong> - SES College, Sreekandapuram</p>
+                        </div>
+                        <div class="edu-item">
+                            <span class="year">2021 - 2023</span>
+                            <p><strong>Computer Science</strong> - Sacred Heart Higher Secondary</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services">
+                <p class="section-label">SERVICES</p>
+                <h2>What I Do Best</h2>
+                <div id="services-grid">
+                    <!-- Injected by main.js -->
+                </div>
+            </section>
+
+            <section id="experience">
+                <p class="section-label">JOURNAL</p>
+                <h2>Work Experience</h2>
+                <div id="experience-timeline">
+                    <!-- Injected by main.js -->
+                </div>
+            </section>
+            <section id="skills">
+                <p class="section-label">EXPERTISE</p>
+                <h2>Technical Toolkit</h2>
+                <div id="skills-container">
+                    <!-- Injected by main.js -->
+                </div>
+            </section>
+
+            <section id="projects">
+                <p class="section-label">PORTFOLIO</p>
+                <h2>Featured Projects</h2>
+                <div id="project-grid">
+                    <!-- Cards will be injected by main.js -->
+                </div>
+            </section>
+            <section id="contact">
+                <h2>Let's Connect</h2>
+                <div id="contact-intro">
+                    <button id="connect-trigger" class="contact-btn">Connect Me</button>
+                </div>
+                <div id="contact-container" class="hidden">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="YOUR NAME" required>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="YOUR EMAIL" required>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="TELL ME ABOUT YOUR VISION..."
+                                required></textarea>
+                            <div class="input-line"></div>
+                        </div>
+                        <button type="submit" id="submit-btn" class="contact-btn">Submit</button>
+                    </form>
+                    <div id="form-status" class="hidden">
+                        <p class="status-msg">MESSAGE RECEIVED</p>
+                        <p class="status-sub">I'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+    </div> <!-- End Main Wrapper -->
+
+    <!-- Cinematic Project Overlay -->
+    <div id="project-overlay" class="hidden">
+        <button class="close-overlay">×</button>
+        <div class="overlay-content">
+            <div class="overlay-left">
+                <div id="overlay-3d-container">
+                    <img id="overlay-img" src="" alt="Project Preview">
+                </div>
+            </div>
+            <div class="overlay-right">
+                <p class="overlay-label">PROJECT SPEC</p>
+                <h2 id="overlay-title">Project Title</h2>
+                <div id="overlay-tags"></div>
+
+                <div class="case-study-section">
+                    <p class="section-label">THE CHALLENGE</p>
+                    <p id="overlay-challenge">The biggest technical hurdle was...</p>
+                </div>
+
+                <div class="case-study-section">
+                    <p class="section-label">KEY OUTCOME</p>
+                    <p id="overlay-outcome">Resulting in a 50% increase in...</p>
+                </div>
+
+                <div class="overlay-stats">
+                    <div class="stat"><span class="label">MY ROLE</span><span class="val" id="overlay-role">Lead
+                            Developer</span></div>
+                    <div class="stat"><span class="label">Architecture</span><span class="val"
+                            id="overlay-arch">Modular</span></div>
+                </div>
+                <a href="#" id="overlay-link" target="_blank" class="primary-btn">View Live Project</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
