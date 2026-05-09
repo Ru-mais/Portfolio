@@ -1,24 +1,10 @@
 export const experience = [
     {
         id: 1,
-        year: "2024 - Present",
+        year: "2025 - Present",
         role: "Freelance Creative Developer",
-        company: "Self-Employed",
-        description: "Specializing in 3D web experiences and mobile app development for local startups and academic projects."
-    },
-    {
-        id: 2,
-        year: "2023 - 2024",
-        role: "Flutter Developer Intern",
-        company: "Billo Systems",
-        description: "Developed production-ready billing modules and inventory management systems using Flutter and Hive."
-    },
-    {
-        id: 3,
-        year: "2022 - 2023",
-        role: "Open Source Contributor",
-        company: "GitHub Community",
-        description: "Contributed to various community-driven projects, focusing on React and AI integrations."
+        company: "Bilby",
+        description: "Specializing in cross-platform billing solutions and production-ready financial modules for modern businesses."
     }
 ];
 
