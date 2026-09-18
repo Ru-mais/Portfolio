@@ -3,17 +3,17 @@ export const experience = [
         id: 1,
         year: "2025 - Present",
         role: "Freelance Creative Developer",
-        company: "Bilby",
-        description: "Specializing in cross-platform billing solutions and production-ready financial modules for modern businesses."
+        company: "Independent",
+        description: "Building production-grade web and mobile applications for clients, focusing on full-stack MERN systems, AI-integrated platforms, and interactive 3D web experiences."
     }
 ];
 
 export const services = [
     {
         id: 1,
-        title: "Experimental 3D Design",
+        title: "Full-Stack Web Systems",
         icon: "cubic",
-        description: "Pushing the boundaries of what's possible on the web with Three.js, shaders, and immersive interactions."
+        description: "Architecting performant, scalable web applications using Next.js, React, Node.js, and modern cloud infrastructure."
     },
     {
         id: 2,
@@ -31,24 +31,35 @@ export const services = [
 
 export const skillCategories = [
     {
-        title: "Frontend & Creative",
+        title: "Frontend & Web",
         skills: [
             { name: "JavaScript", icon: "js" },
             { name: "TypeScript", icon: "ts" },
-            { name: "Three.js", icon: "threejs" },
             { name: "React", icon: "react" },
+            { name: "Next.js", icon: "nextjs" },
             { name: "Tailwind CSS", icon: "tailwind" },
-            { name: "HTML5", icon: "html" }
+            { name: "HTML5", icon: "html" },
+            { name: "CSS3", icon: "css" }
         ]
     },
     {
-        title: "App & Systems",
+        title: "Backend & Systems",
+        skills: [
+            { name: "Node.js", icon: "nodejs" },
+            { name: "Python", icon: "py" },
+            { name: "Django", icon: "django" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "PostgreSQL", icon: "postgres" },
+            { name: "Express", icon: "express" }
+        ]
+    },
+    {
+        title: "Mobile & Cross-Platform",
         skills: [
             { name: "Dart", icon: "dart" },
             { name: "Flutter", icon: "flutter" },
             { name: "Java", icon: "java" },
-            { name: "C++", icon: "cpp" },
-            { name: "Python", icon: "py" }
+            { name: "C++", icon: "cpp" }
         ]
     },
     {
@@ -57,8 +68,9 @@ export const skillCategories = [
             { name: "Git", icon: "git" },
             { name: "Firebase", icon: "firebase" },
             { name: "AWS", icon: "aws" },
+            { name: "Docker", icon: "docker" },
             { name: "Figma", icon: "figma" },
-            { name: "Node.js", icon: "nodejs" }
+            { name: "Linux", icon: "linux" }
         ]
     }
 ];

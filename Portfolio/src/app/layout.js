@@ -1,34 +1,37 @@
-import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
+import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["500", "700", "800"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata = {
   title: "Rumais P P | Creative Software Developer",
-  description: "Creative software developer building immersive web and mobile experiences with Flutter, Three.js, and the MERN stack.",
+  description: "Creative software developer specializing in high-performance digital systems, Flutter architectures, and 3D web experiences.",
   openGraph: {
     title: "Rumais P P | Creative Software Developer",
-    description: "Creative software developer building immersive web and mobile experiences with Flutter, Three.js, and the MERN stack.",
+    description: "Creative software developer specializing in high-performance digital systems, Flutter architectures, and 3D web experiences.",
     type: "website",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${jakarta.variable} ${jetbrainsMono.variable}`}>
       <body>{children}</body>
     </html>
   );

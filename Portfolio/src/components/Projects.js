@@ -16,26 +16,22 @@ export default function Projects() {
 
   useGSAP(() => {
     const cards = gsap.utils.toArray('.project-card');
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       gsap.fromTo(
         card,
         {
           opacity: 0,
-          y: 72,
-          rotationX: 24,
-          z: -150,
+          y: 40,
         },
         {
           opacity: 1,
           y: 0,
-          rotationX: -9,
-          z: 52,
-          ease: 'none',
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: card,
             start: 'top 92%',
-            end: 'top 30%',
-            scrub: 0.7
+            end: 'top 60%',
+            scrub: 0.5
           }
         }
       );
@@ -55,13 +51,21 @@ export default function Projects() {
   return (
     <>
       <section id="projects" ref={containerRef}>
-        <p className="section-label">PORTFOLIO</p>
-        <h2>Featured Projects</h2>
+        <div className="section-header-row">
+          <div>
+            <p className="section-label">[ 02 // SELECTED EXHIBITION ]</p>
+            <h2>Featured Products & Systems</h2>
+          </div>
+          <p className="section-header-desc">
+            A curated index of production applications, experimental 3D web spaces, and cross-platform tools.
+          </p>
+        </div>
+
         <div id="project-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="card-content">
-                <span className="index">0{index + 1}</span>
+                <span className="index">[ REF. 0{index + 1} ]</span>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tags">
@@ -69,13 +73,27 @@ export default function Projects() {
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
-                <button 
-                  onClick={() => openOverlay(project)} 
-                  className="project-link"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                >
-                  Exploration →
-                </button>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.5rem'}}>
+                  <button 
+                    type="button"
+                    onClick={() => openOverlay(project)} 
+                    className="project-link"
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                  >
+                    Inspect Dossier →
+                  </button>
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="nav-spec"
+                      style={{textDecoration: 'none'}}
+                    >
+                      Source Code ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -102,28 +120,35 @@ export default function Projects() {
               </div>
             </div>
             <div className="overlay-right">
-              <p className="overlay-label">PROJECT SPEC</p>
-              <h2 id="overlay-title">{activeProject.title}</h2>
-              <div id="overlay-tags">
+              <p className="section-label">[ SPECIFICATION DOSSIER ]</p>
+              <h2 id="overlay-title" style={{marginBottom: '1rem', fontSize: '2.2rem'}}>{activeProject.title}</h2>
+              <div id="overlay-tags" className="tags">
                 {activeProject.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
               </div>
 
               <div className="case-study-section">
-                <p className="section-label">THE CHALLENGE</p>
+                <p className="section-label">CHALLENGE</p>
                 <p id="overlay-challenge">{activeProject.challenge}</p>
               </div>
 
               <div className="case-study-section">
-                <p className="section-label">KEY OUTCOME</p>
+                <p className="section-label">OUTCOME</p>
                 <p id="overlay-outcome">{activeProject.outcome}</p>
               </div>
 
-              <div className="overlay-stats">
-                <div className="stat"><span className="label">MY ROLE</span><span className="val">{activeProject.role}</span></div>
-                <div className="stat"><span className="label">Architecture</span><span className="val">Modular</span></div>
+              <div style={{display: 'flex', gap: '2rem', margin: '0.5rem 0'}}>
+                <div>
+                  <span className="section-label" style={{display: 'block', fontSize: '0.7rem'}}>ROLE</span>
+                  <span style={{fontWeight: 700, fontFamily: 'var(--font-mono)'}}>{activeProject.role}</span>
+                </div>
+                <div>
+                  <span className="section-label" style={{display: 'block', fontSize: '0.7rem'}}>STATUS</span>
+                  <span style={{fontWeight: 700, fontFamily: 'var(--font-mono)', color: 'var(--secondary-color)'}}>PRODUCTION-READY</span>
+                </div>
               </div>
-              <a href={activeProject.link} target="_blank" rel="noopener noreferrer" className="primary-btn">
-                View Live Project
+
+              <a href={activeProject.link} target="_blank" rel="noopener noreferrer" className="primary-btn" style={{alignSelf: 'flex-start'}}>
+                Open Repository / Deployment ↗
               </a>
             </div>
           </div>

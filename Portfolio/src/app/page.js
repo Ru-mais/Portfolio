@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
+import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import AnimeBackground from '@/components/AnimeBackground';
 
@@ -37,11 +38,12 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
+        <Projects />
         <About />
         <Services />
         <Experience />
         <Skills />
-        <Projects />
+        <Education />
         <Contact />
       </main>
     </div>

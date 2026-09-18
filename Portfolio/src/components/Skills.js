@@ -9,7 +9,7 @@ const SkillMarqueeRow = ({ skills, direction = 1 }) => {
   const tl = useRef(null);
 
   useGSAP(() => {
-    const duration = 20 + Math.random() * 10;
+    const duration = 22 + Math.random() * 8;
     tl.current = gsap.to(innerRef.current, {
       xPercent: direction > 0 ? -33.33 : 33.33,
       duration,
@@ -34,8 +34,8 @@ const SkillMarqueeRow = ({ skills, direction = 1 }) => {
               src={`https://skillicons.dev/icons?i=${skill.icon}`} 
               alt={skill.name} 
               className="skill-icon" 
-              width={50} 
-              height={50} 
+              width={42} 
+              height={42} 
             />
             <span className="skill-name">{skill.name}</span>
           </div>
@@ -48,8 +48,16 @@ const SkillMarqueeRow = ({ skills, direction = 1 }) => {
 export default function Skills() {
   return (
     <section id="skills">
-      <p className="section-label">EXPERTISE</p>
-      <h2>Technical Toolkit</h2>
+      <div className="section-header-row">
+        <div>
+          <p className="section-label">[ 06 // TECHNICAL ARSENAL ]</p>
+          <h2>Tools & Technologies</h2>
+        </div>
+        <p className="section-header-desc">
+          Core languages, frameworks, and infrastructure tools utilized in everyday development workflows.
+        </p>
+      </div>
+
       <div id="skills-container">
         {skillCategories.map((cat, index) => (
           <div key={cat.title} className="skill-category-wrapper">

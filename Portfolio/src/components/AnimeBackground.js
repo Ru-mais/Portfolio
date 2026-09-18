@@ -13,7 +13,7 @@ export default function AnimeBackground() {
         const width = window.innerWidth;
         const height = window.innerHeight;
 
-        // 1. Create a Deep Mesh Grid (SVG)
+        // 1. Create a Precision Blueprint Grid & Crosshair SVG
         const svgNamespace = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNamespace, "svg");
         svg.setAttribute("width", "100%");
@@ -21,110 +21,79 @@ export default function AnimeBackground() {
         svg.style.position = "absolute";
         svg.style.top = "0";
         svg.style.left = "0";
-        svg.style.opacity = "0.3";
+        svg.style.opacity = "0.7";
         container.appendChild(svg);
 
-        const gridSpacing = 80;
+        const gridSpacing = 90;
         const dots = [];
-        for (let x = 0; x < width + gridSpacing; x += gridSpacing) {
-            for (let y = 0; y < height + gridSpacing; y += gridSpacing) {
-                const dot = document.createElementNS(svgNamespace, "circle");
-                dot.setAttribute("cx", x);
-                dot.setAttribute("cy", y);
-                dot.setAttribute("r", "1");
-                dot.setAttribute("fill", "var(--secondary-color)");
-                dot.setAttribute("fill-opacity", "0.2");
-                svg.appendChild(dot);
-                dots.push(dot);
+        const crosshairs = [];
+
+        for (let x = 40; x < width + gridSpacing; x += gridSpacing) {
+            for (let y = 40; y < height + gridSpacing; y += gridSpacing) {
+                // Precision crosshairs (+) at selected intersections
+                if ((x + y) % (gridSpacing * 2) === 0) {
+                    const cross = document.createElementNS(svgNamespace, "path");
+                    const size = 3;
+                    cross.setAttribute("d", `M${x - size},${y} L${x + size},${y} M${x},${y - size} L${x},${y + size}`);
+                    cross.setAttribute("stroke", "#FF5500");
+                    cross.setAttribute("stroke-width", "1");
+                    cross.setAttribute("stroke-opacity", "0.35");
+                    svg.appendChild(cross);
+                    crosshairs.push(cross);
+                } else {
+                    const dot = document.createElementNS(svgNamespace, "circle");
+                    dot.setAttribute("cx", x);
+                    dot.setAttribute("cy", y);
+                    dot.setAttribute("r", "1");
+                    dot.setAttribute("fill", "#19191B");
+                    dot.setAttribute("fill-opacity", "0.15");
+                    svg.appendChild(dot);
+                    dots.push(dot);
+                }
             }
         }
 
-        // 2. Create "Energy Strands" (Bezier Curves)
-        const strandCount = 12;
+        // 2. Technical Hairline Coordinate Strands
+        const strandCount = 6;
         const strands = [];
         for (let i = 0; i < strandCount; i++) {
             const path = document.createElementNS(svgNamespace, "path");
-            const d = `M${random(0, width)},${height + 100} Q${random(0, width)},${height / 2} ${random(0, width)},-100`;
+            const d = `M${random(0, width)},${height + 50} Q${random(0, width)},${height / 2} ${random(0, width)},-50`;
             path.setAttribute("d", d);
             path.setAttribute("fill", "none");
-            path.setAttribute("stroke", i % 2 === 0 ? "var(--secondary-color)" : "var(--accent-color)");
-            path.setAttribute("stroke-width", random(1, 3));
-            path.setAttribute("stroke-opacity", "0.1");
+            path.setAttribute("stroke", i % 2 === 0 ? "#FF5500" : "#586958");
+            path.setAttribute("stroke-width", "1");
+            path.setAttribute("stroke-dasharray", "4 8");
+            path.setAttribute("stroke-opacity", "0.2");
             svg.appendChild(path);
             strands.push(path);
         }
 
-        // 3. Create Floating Digital Particles (Divs)
-        const particleCount = 40;
-        const particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            const p = document.createElement('div');
-            p.className = 'anime-bg-element particle';
-            const size = random(2, 6);
-            p.style.width = `${size}px`;
-            p.style.height = `${size}px`;
-            p.style.left = `${random(0, 100)}%`;
-            p.style.top = `${random(0, 100)}%`;
-            p.style.background = i % 2 === 0 ? 'var(--secondary-color)' : 'var(--accent-color)';
-            p.style.boxShadow = `0 0 10px ${p.style.background}`;
-            p.style.borderRadius = '50%';
-            p.style.opacity = random(0.1, 0.5).toString();
-            container.appendChild(p);
-            particles.push(p);
-        }
-
-        // 4. Autonomous Animations
-        animate(dots, {
-            scale: () => [1, 2],
-            opacity: () => [0.2, 0.5],
-            duration: () => random(2000, 4000),
-            delay: () => random(0, 2000),
+        // 3. Autonomous subtle pulse animations
+        animate(crosshairs, {
+            scale: () => [1, 1.3],
+            opacity: () => [0.2, 0.6],
+            duration: () => random(2500, 4500),
+            delay: () => random(0, 1500),
             direction: 'alternate',
             loop: true,
             ease: 'inOutQuad'
         });
 
         animate(strands, {
-            strokeDashoffset: [2000, 0],
-            opacity: [0.1, 0.3],
-            duration: () => random(10000, 20000),
+            strokeDashoffset: [200, 0],
+            duration: () => random(14000, 24000),
             loop: true,
             ease: 'linear'
         });
 
-        // 5. Scroll Timeline (God-Tier Motion)
+        // 4. Scroll Timeline for subtle parallax
         const timeline = createTimeline({
             autoplay: false
         });
 
-        // Parallax Grid
         timeline.add(svg, {
-            translateY: -200,
-            rotate: 5,
-            duration: 1000,
-            ease: 'linear'
-        }, 0);
-
-        // Particles float upwards and fade out
-        timeline.add(particles, {
-            translateY: (el, i) => -random(500, 1500),
-            translateX: (el, i) => random(-200, 200),
-            opacity: 0,
-            duration: 1000,
-            ease: 'linear'
-        }, 0);
-
-        // Strands morph/shift
-        timeline.add(strands, {
-            scaleX: 1.5,
-            translateX: (el, i) => (i % 2 === 0 ? 100 : -100),
-            duration: 1000,
-            ease: 'linear'
-        }, 0);
-
-        // Global background color transition
-        timeline.add(container, {
-            backgroundColor: ['#020617', '#000000'],
+            translateY: -80,
             duration: 1000,
             ease: 'linear'
         }, 0);
@@ -132,7 +101,7 @@ export default function AnimeBackground() {
         timelineRef.current = timeline;
 
         const handleScroll = () => {
-            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const scrollPercent = window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
             if (timelineRef.current) {
                 timelineRef.current.seek(scrollPercent * 1000);
             }
@@ -141,18 +110,11 @@ export default function AnimeBackground() {
         const handleMouseMove = (e) => {
             const x = (e.clientX / width) - 0.5;
             const y = (e.clientY / height) - 0.5;
-            
-            animate(particles, {
-                translateX: (el, i) => x * (i + 1) * 20,
-                translateY: (el, i) => y * (i + 1) * 20,
-                duration: 600,
-                ease: 'outQuad'
-            });
 
             animate(svg, {
-                translateX: x * 30,
-                translateY: y * 30,
-                duration: 1000,
+                translateX: x * 20,
+                translateY: y * 20,
+                duration: 800,
                 ease: 'outQuad'
             });
         };
@@ -164,6 +126,9 @@ export default function AnimeBackground() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('mousemove', handleMouseMove);
+            if (bgRef.current) {
+                bgRef.current.innerHTML = '';
+            }
         };
     }, []);
 
@@ -180,7 +145,7 @@ export default function AnimeBackground() {
                 zIndex: -1,
                 overflow: 'hidden',
                 pointerEvents: 'none',
-                background: '#020617'
+                background: '#EAE8E1'
             }}
         />
     );

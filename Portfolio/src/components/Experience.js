@@ -3,8 +3,16 @@ import { experience } from '@/data/info';
 export default function Experience() {
   return (
     <section id="experience">
-      <p className="section-label">JOURNAL</p>
-      <h2>Work Experience</h2>
+      <div className="section-header-row">
+        <div>
+          <p className="section-label">[ 05 // LOGBOOK & TRACK RECORD ]</p>
+          <h2>Professional Experience</h2>
+        </div>
+        <p className="section-header-desc">
+          Building and maintaining production-level applications in fast-paced collaborative environments.
+        </p>
+      </div>
+
       <div id="experience-timeline">
         {experience.map((exp) => (
           <div key={exp.id} className="experience-item">

@@ -5,6 +5,15 @@ import { site } from '@/data/site';
 export default function Contact() {
   const [showForm, setShowForm] = useState(false);
   const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    if (site.contactEmail) {
+      navigator.clipboard.writeText(site.contactEmail);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,17 +22,13 @@ export default function Contact() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    // Set the subject to the "Vision" (message) provided by the user
-    data._subject = `Portfolio Vision: ${data.message.substring(0, 50)}${data.message.length > 50 ? '...' : ''}`;
+    data._subject = `Portfolio Inquiry: ${data.message.substring(0, 50)}${data.message.length > 50 ? '...' : ''}`;
 
     const endpoint = site.formspreeId 
       ? `https://formspree.io/f/${site.formspreeId}` 
       : `https://formspree.io/${site.contactEmail}`;
 
     try {
-      console.log('Sending to:', endpoint);
-      
-      // Use FormData directly - more robust for Formspree
       const response = await fetch(endpoint, {
         method: 'POST',
         body: formData,
@@ -32,13 +37,9 @@ export default function Contact() {
         }
       });
 
-      const result = await response.json();
-      console.log('Formspree response:', result);
-
       if (response.ok) {
         setStatus('success');
       } else {
-        console.error('Formspree error:', result);
         setStatus('error');
       }
     } catch (err) {
@@ -49,44 +50,66 @@ export default function Contact() {
 
   return (
     <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Let's Connect</h2>
-      
-      {!showForm && status === 'idle' && (
-        <div id="contact-intro">
-          <button type="button" onClick={() => setShowForm(true)} className="contact-btn">
-            Connect Me
+      <p className="section-label">[ 08 // DISPATCH & TRANSMISSION ]</p>
+      <h2 id="contact-heading" style={{textAlign: 'center', marginBottom: '2rem'}}>Initialize Connection</h2>
+      <p style={{maxWidth: '36rem', margin: '0 auto 2.5rem', color: 'var(--text-muted)', fontSize: '1.1rem'}}>
+        Have an experimental project, cross-platform engineering challenge, or creative development inquiry? Let's build something extraordinary.
+      </p>
+
+      <div style={{display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2.5rem', flexWrap: 'wrap'}}>
+        <button 
+          type="button" 
+          onClick={handleCopyEmail} 
+          className="secondary-btn"
+          style={{fontFamily: 'var(--font-mono)'}}
+        >
+          {copied ? '✓ COPIED TO CLIPBOARD' : `COPY: ${site.contactEmail || 'EMAIL'}`}
+        </button>
+        {!showForm && status === 'idle' && (
+          <button type="button" onClick={() => setShowForm(true)} className="primary-btn">
+            Open Message Terminal →
           </button>
-        </div>
-      )}
+        )}
+      </div>
 
       {(showForm || status !== 'idle') && (
         <div id="contact-container" className={status === 'success' ? 'success' : ''}>
           {status === 'success' ? (
             <div id="form-status" className="active" role="status">
-              <p className="status-msg">MESSAGE RECEIVED</p>
-              <p className="status-sub">I'll get back to you shortly.</p>
+              <p className="status-msg">TRANSMISSION RECEIVED</p>
+              <p className="status-sub">Your dispatch was logged. I will review and respond promptly.</p>
               <button onClick={() => { setStatus('idle'); setShowForm(false); }} className="contact-btn" style={{marginTop: '2rem'}}>
-                Send Another
+                Reset Terminal
               </button>
             </div>
           ) : (
             <form id="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <input type="text" name="name" placeholder="YOUR NAME" required />
+                <input type="text" name="name" placeholder="[ ENTER SENDER / ENTITY NAME ]" required />
                 <div className="input-line"></div>
               </div>
               <div className="form-group">
-                <input type="email" name="email" placeholder="YOUR EMAIL" required />
+                <input type="email" name="email" placeholder="[ ENTER RETURN EMAIL ADDRESS ]" required />
                 <div className="input-line"></div>
               </div>
               <div className="form-group">
-                <textarea name="message" placeholder="TELL ME ABOUT YOUR VISION..." required></textarea>
+                <textarea name="message" placeholder="[ PROJECT SPECIFICATION & TIMELINE... ]" required></textarea>
                 <div className="input-line"></div>
               </div>
-              <button type="submit" disabled={status === 'sending'} className="contact-btn">
-                {status === 'sending' ? 'SENDING...' : 'Submit'}
-              </button>
-              {status === 'error' && <p style={{color: 'red', marginTop: '1rem'}}>Something went wrong. Please try again.</p>}
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem'}}>
+                <button type="submit" disabled={status === 'sending'} className="contact-btn">
+                  {status === 'sending' ? 'TRANSMITTING...' : 'Transmit Message →'}
+                </button>
+                <button 
+                  type="button" 
+                  onClick={() => setShowForm(false)} 
+                  className="secondary-btn" 
+                  style={{border: 'none', background: 'transparent', padding: '0.5rem 1rem'}}
+                >
+                  Close [×]
+                </button>
+              </div>
+              {status === 'error' && <p style={{color: '#FF5500', marginTop: '1rem', fontFamily: 'var(--font-mono)'}}>Transmission fault. Please try again or copy email directly.</p>}
             </form>
           )}
         </div>
