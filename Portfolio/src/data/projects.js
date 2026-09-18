@@ -20,10 +20,10 @@ export const projects = [
         outcome: "A high-end social platform that provides a safe and immersive experience for users to connect within their local community."
     },
     {
-        title: "Mentear-AI",
+        title: "Menter-AI",
         description: "Intelligent productivity and mentorship platform powered by advanced AI to bridge the gap between learning and implementation.",
         tags: ["Python", "Django", "OpenAI", "Tailwind"],
-        link: "https://github.com/Ru-mais/Mentear-AI",
+        link: "https://github.com/Ru-mais/Menter-AI.git",
         image: "/projects/mentear.png",
         role: "Full-Stack Engineer",
         challenge: "Integrating complex AI reasoning chains into a low-latency web architecture for real-time mentorship.",
@@ -33,7 +33,7 @@ export const projects = [
         title: "EduVerse",
         description: "A comprehensive educational ecosystem that democratizes access to learning resources and collaborative academic environments.",
         tags: ["Next.js", "React", "Node.js", "Tailwind"],
-        link: "https://github.com/Ru-mais/EduVerse",
+        link: "https://github.com/Ru-mais/elearning.git",
         image: "/projects/eduverse.png",
         role: "Frontend Architect",
         challenge: "Architecting a responsive, high-performance UI for managing diverse academic resources and user interactions.",
