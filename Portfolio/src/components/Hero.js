@@ -85,96 +85,108 @@ export default function Hero() {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="hero-wrapper">
-      <div className="page-overlay">
-        <div className="loader-text">
+    <div ref={containerRef} className="relative bg-background text-textMain overflow-hidden font-jakarta w-full">
+      
+      {/* Loading Overlay */}
+      <div className="page-overlay fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center pointer-events-none" style={{ clipPath: 'inset(0 0 0 0)' }}>
+        <div className="loader-text text-5xl md:text-[5vw] font-syne font-bold tracking-tight text-textMain relative mb-4">
           RUMAIS P P
-          <div className="overlay-bar"></div>
+          <div className="overlay-bar absolute bottom-0 left-0 w-full h-[2px] bg-accent origin-left animate-pulse"></div>
         </div>
-        <div className="loader-sub">[ CREATIVE TECHNOLOGIST // 2026 ]</div>
+        <div className="loader-sub text-xs md:text-sm font-mono tracking-widest text-textSecondary uppercase">
+          [ CREATIVE TECHNOLOGIST // 2026 ]
+        </div>
       </div>
 
-      <section id="hero" aria-labelledby="hero-title">
-        <div className="hero-split-grid">
+      <section id="hero" aria-labelledby="hero-title" className="min-h-screen pt-24 md:pt-[12vh] pb-12 flex flex-col justify-between">
+        <div className="hero-split-grid w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 lg:items-center flex-1">
+          
           {/* Left Column: Asymmetric Typography & Action */}
-          <div className="hero-left-content">
-            <div className="hero-spec-tag">
-              <span className="pulsing-led"></span>
+          <div className="hero-left-content pr-0 lg:pr-12">
+            <div className="hero-spec-tag flex items-center gap-3 font-mono text-xs tracking-widest text-textSecondary uppercase mb-8 border border-white/10 w-max px-4 py-2 bg-white/5 backdrop-blur-md rounded-full shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--accent-color)] animate-pulse"></span>
               SPEC: FULL-STACK & MOBILE DEVELOPER // 2026
             </div>
-            <h1 id="hero-title">
-              CRAFTING <em>IMMERSIVE</em> DIGITAL SYSTEMS.
+            
+            <h1 id="hero-title" className="text-5xl md:text-6xl lg:text-[5.5rem] font-syne font-bold leading-[1.05] tracking-tight uppercase mb-8 text-textMain text-shadow-sm">
+              CRAFTING <em className="not-italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/80 font-serif font-light">IMMERSIVE</em> DIGITAL SYSTEMS.
             </h1>
-            <p className="hero-desc">
-              Creative engineer specializing in <strong>Flutter mobile architectures</strong>, 
-              <strong>AI-integrated intelligent platforms</strong>, and high-performance <strong>full-stack MERN systems</strong> with tactile precision.
+            
+            <p className="hero-desc text-lg md:text-xl leading-relaxed text-textSecondary max-w-xl font-light mb-12">
+              Creative engineer specializing in <strong className="font-semibold text-textMain">Flutter mobile architectures</strong>, 
+              <strong className="font-semibold text-textMain">complex interactive frontend architectures</strong>, and high-performance <strong className="font-semibold text-textMain">full-stack web products</strong> with tactile precision.
             </p>
-            <div className="hero-btns">
-              <a href="#projects" className="primary-btn">
-                Explore Selected Works <span className="btn-arrow">→</span>
+            
+            <div className="hero-btns flex flex-col sm:flex-row gap-6">
+              <a href="#projects" className="primary-btn flex items-center justify-center gap-3 px-8 py-4 bg-textMain text-background font-mono text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm">
+                Explore Selected Works <span>→</span>
               </a>
-              <a id="cv-link" className="secondary-btn" href="/resume.pdf">
+              <a id="cv-link" className="secondary-btn flex items-center justify-center px-8 py-4 bg-transparent text-textMain border border-textMain/20 font-mono text-xs uppercase tracking-widest hover:bg-white/5 hover:border-textMain/40 transition-all duration-300 rounded-sm" href="/resume.pdf">
                 Download Full Dossier
               </a>
             </div>
           </div>
 
           {/* Right Column: Live Interactive Developer Bento Dashboard */}
-          <div className="hero-bento-dashboard">
-            <div className="dashboard-header">
-              <div className="dashboard-status">
-                <span className="live-dot"></span>
-                <span className="status-text">AVAILABLE FOR COMMISSIONS</span>
+          <div className="hero-bento-dashboard grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-min bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_70%)] p-4 md:p-8 rounded-3xl border border-white/5 shadow-2xl backdrop-blur-lg">
+            
+            <div className="dashboard-header col-span-1 sm:col-span-2 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white/5 p-4 rounded-xl border border-white/10 mb-2 shadow-inner">
+              <div className="dashboard-status flex items-center gap-3">
+                <span className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e] animate-pulse"></span>
+                <span className="font-mono text-xs tracking-widest text-textMain uppercase">AVAILABLE FOR COMMISSIONS</span>
               </div>
-              <span className="dashboard-tag">SYS.REF // 01</span>
+              <span className="font-mono text-[10px] text-textSecondary mt-2 sm:mt-0 tracking-[0.2em]">SYS.REF // 01</span>
             </div>
 
-            <div className="dashboard-clock-widget">
-              <span className="widget-label">LOCAL TELEMETRY / TIME (IST)</span>
-              <div className="clock-time">{timeString || '03:17:39 AM'}</div>
-              <span className="location-tag">📍 KERALA, INDIA [11.87°N, 75.37°E]</span>
+            <div className="dashboard-clock-widget col-span-1 bg-white/5 p-6 rounded-xl border border-white/10 flex flex-col justify-between min-h-[140px] hover:bg-white/10 transition-colors duration-300 relative overflow-hidden group">
+              <span className="font-mono text-[10px] text-textSecondary uppercase tracking-widest mb-4">LOCAL TELEMETRY / TIME (IST)</span>
+              <div className="text-3xl font-syne font-medium text-textMain tracking-tight mb-2 relative z-10">{timeString || '03:17:39 AM'}</div>
+              <span className="font-mono text-[10px] text-accent opacity-80 uppercase tracking-wider block border-t border-white/10 pt-2 mt-auto">📍 KERALA, INDIA [11.87°N, 75.37°E]</span>
             </div>
 
-            <div className="dashboard-focus-widget">
-              <span className="widget-label">CURRENT ACTIVE FOCUS</span>
-              <p className="focus-title">Datie: Community Dating Platform</p>
-              <span className="focus-sub">Next.js • Node.js • MongoDB • MERN Stack</span>
+            <div className="dashboard-focus-widget col-span-1 bg-accent/10 p-6 rounded-xl border border-accent/20 flex flex-col justify-between min-h-[140px] relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+              <span className="font-mono text-[10px] text-accent uppercase tracking-widest mb-4 font-bold">CURRENT ACTIVE FOCUS</span>
+              <p className="text-xl font-syne font-medium text-textMain leading-tight mb-2">Datie: Community Dating Platform</p>
+              <span className="font-mono text-[10px] text-textSecondary block mt-auto">Next.js • Node.js • MongoDB • MERN Stack</span>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/20 blur-2xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
             </div>
 
-            <div className="dashboard-metrics-grid">
-              <div className="metric-box">
-                <span className="metric-num">03+</span>
-                <span className="metric-label">Years Craft</span>
+            <div className="dashboard-metrics-grid col-span-1 sm:col-span-2 grid grid-cols-3 gap-4 mt-2">
+              <div className="metric-box bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                <span className="text-2xl md:text-3xl font-syne font-bold text-textMain mb-1 group-hover:text-accent transition-colors">04+</span>
+                <span className="font-mono text-[9px] uppercase tracking-widest text-textSecondary">Years Craft</span>
               </div>
-              <div className="metric-box">
-                <span className="metric-num">04+</span>
-                <span className="metric-label">Shipped Products</span>
+              <div className="metric-box bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                <span className="text-2xl md:text-3xl font-syne font-bold text-textMain mb-1 group-hover:text-accent transition-colors">04+</span>
+                <span className="font-mono text-[9px] uppercase tracking-widest text-textSecondary">Shipped Products</span>
               </div>
-              <div className="metric-box">
-                <span className="metric-num">100%</span>
-                <span className="metric-label">Code Precision</span>
+              <div className="metric-box bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                <span className="text-2xl md:text-3xl font-syne font-bold text-textMain mb-1 group-hover:text-accent transition-colors">100%</span>
+                <span className="font-mono text-[9px] uppercase tracking-widest text-textSecondary">Code Precision</span>
               </div>
             </div>
+            
           </div>
         </div>
 
         {/* Seamless Running Marquee Strip */}
-        <div className="hero-marquee-strip">
-          <div className="hero-marquee-track">
-            <span>✦ CREATIVE COMPUTING</span>
-            <span>✦ REACT & NEXT.JS</span>
-            <span>✦ FLUTTER ARCHITECTURE</span>
-            <span>✦ FULL-STACK MERN</span>
-            <span>✦ AI & INTELLIGENT SYSTEMS</span>
-            <span>✦ TYPESCRIPT</span>
-            <span>✦ CREATIVE COMPUTING</span>
-            <span>✦ REACT & NEXT.JS</span>
-            <span>✦ FLUTTER ARCHITECTURE</span>
-            <span>✦ FULL-STACK MERN</span>
-            <span>✦ AI & INTELLIGENT SYSTEMS</span>
-            <span>✦ TYPESCRIPT</span>
+        <div className="hero-marquee-strip w-full overflow-hidden whitespace-nowrap mt-24 py-4 border-y border-white/5 bg-white/5 backdrop-blur-md rotate-1 transform-origin-center">
+          <div className="hero-marquee-track inline-block font-mono text-[11px] tracking-widest text-textSecondary uppercase animate-[marquee_20s_linear_infinite]">
+            <span className="mx-6">✦ CREATIVE COMPUTING</span>
+            <span className="mx-6">✦ REACT & NEXT.JS</span>
+            <span className="mx-6">✦ FLUTTER ARCHITECTURE</span>
+            <span className="mx-6">✦ FULL-STACK MERN</span>
+            <span className="mx-6">✦ AI & INTELLIGENT SYSTEMS</span>
+            <span className="mx-6">✦ TYPESCRIPT</span>
+            <span className="mx-6">✦ CREATIVE COMPUTING</span>
+            <span className="mx-6">✦ REACT & NEXT.JS</span>
+            <span className="mx-6">✦ FLUTTER ARCHITECTURE</span>
+            <span className="mx-6">✦ FULL-STACK MERN</span>
+            <span className="mx-6">✦ AI & INTELLIGENT SYSTEMS</span>
+            <span className="mx-6">✦ TYPESCRIPT</span>
           </div>
         </div>
+        
       </section>
     </div>
   );
