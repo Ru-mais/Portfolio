@@ -17,9 +17,9 @@ export const services = [
     },
     {
         id: 2,
-        title: "Cross-Platform Apps",
+        title: "Scalable Web Systems",
         icon: "mobile",
-        description: "Crafting robust, high-performance mobile applications using Flutter and Dart for both iOS and Android."
+        description: "Crafting robust, high-performance scalable web applications and enterprise systems using Next.js and Node."
     },
     {
         id: 3,
@@ -29,27 +29,42 @@ export const services = [
     }
 ];
 
-export const skills = [
-    { name: "JavaScript", icon: "js" },
-    { name: "TypeScript", icon: "ts" },
-    { name: "Next.js", icon: "nextjs" },
-    { name: "React", icon: "react" },
-    { name: "Node.js", icon: "nodejs" },
-    { name: "Express", icon: "express" },
-    { name: "MongoDB", icon: "mongodb" },
-    { name: "Tailwind CSS", icon: "tailwind" },
-    { name: "HTML5", icon: "html" },
-    { name: "Java", icon: "java" },
-    { name: "C++", icon: "cpp" },
-    { name: "Python", icon: "py" },
-    { name: "Git", icon: "git" },
-    { name: "Firebase", icon: "firebase" },
-    { name: "Supabase", icon: "supabase" },
-    { name: "PostgreSQL", icon: "postgres" },
-    { name: "AWS", icon: "aws" },
-    { name: "Docker", icon: "docker" },
-    { name: "Vercel", icon: "vercel" },
-    { name: "Redux", icon: "redux" },
-    { name: "GSAP", icon: "gsap" },
-    { name: "Figma", icon: "figma" }
+export const skillCategories = [
+    {
+        title: "Frontend Development",
+        skills: [
+            { name: "JavaScript", icon: "js" },
+            { name: "TypeScript", icon: "ts" },
+            { name: "React", icon: "react" },
+            { name: "Next.js", icon: "nextjs" },
+            { name: "Tailwind", icon: "tailwind" },
+            { name: "HTML5", icon: "html" },
+            { name: "Redux", icon: "redux" },
+            { name: "GSAP", icon: "gsap" }
+        ]
+    },
+    {
+        title: "Backend & Database",
+        skills: [
+            { name: "Node.js", icon: "nodejs" },
+            { name: "Express", icon: "express" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "PostgreSQL", icon: "postgres" },
+            { name: "Supabase", icon: "supabase" },
+            { name: "Firebase", icon: "firebase" },
+        ]
+    },
+    {
+        title: "Languages & Tools",
+        skills: [
+            { name: "Python", icon: "py" },
+            { name: "C++", icon: "cpp" },
+            { name: "Java", icon: "java" },
+            { name: "Git", icon: "git" },
+            { name: "Docker", icon: "docker" },
+            { name: "AWS", icon: "aws" },
+            { name: "Vercel", icon: "vercel" },
+            { name: "Figma", icon: "figma" }
+        ]
+    }
 ];

@@ -31,7 +31,7 @@ export default function AnimeBackground() {
         for (let x = 40; x < width + gridSpacing; x += gridSpacing) {
             for (let y = 40; y < height + gridSpacing; y += gridSpacing) {
                 // Precision crosshairs (+) at selected intersections
-                if ((x + y) % (gridSpacing * 2) === 0) {
+                if (((x - 40) + (y - 40)) % (gridSpacing * 2) === 0) {
                     const cross = document.createElementNS(svgNamespace, "path");
                     const size = 3;
                     cross.setAttribute("d", `M${x - size},${y} L${x + size},${y} M${x},${y - size} L${x},${y + size}`);
@@ -70,22 +70,26 @@ export default function AnimeBackground() {
         }
 
         // 3. Autonomous subtle pulse animations
-        animate(crosshairs, {
-            scale: () => [1, 1.3],
-            opacity: () => [0.2, 0.6],
-            duration: () => random(2500, 4500),
-            delay: () => random(0, 1500),
-            direction: 'alternate',
-            loop: true,
-            ease: 'inOutQuad'
-        });
+        if (crosshairs.length > 0) {
+            animate(crosshairs, {
+                scale: () => [1, 1.3],
+                opacity: () => [0.2, 0.6],
+                duration: () => random(2500, 4500),
+                delay: () => random(0, 1500),
+                direction: 'alternate',
+                loop: true,
+                ease: 'inOutQuad'
+            });
+        }
 
-        animate(strands, {
-            strokeDashoffset: [200, 0],
-            duration: () => random(14000, 24000),
-            loop: true,
-            ease: 'linear'
-        });
+        if (strands.length > 0) {
+            animate(strands, {
+                strokeDashoffset: [200, 0],
+                duration: () => random(14000, 24000),
+                loop: true,
+                ease: 'linear'
+            });
+        }
 
         // 4. Scroll Timeline for subtle parallax
         const timeline = createTimeline({

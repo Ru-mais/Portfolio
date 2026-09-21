@@ -1,4 +1,5 @@
 import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import Cursor from "@/components/Cursor";
 import "./globals.css";
 
 const syne = Syne({
@@ -21,10 +22,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Rumais P P | Creative Software Developer",
-  description: "Creative software developer specializing in high-performance digital systems, Flutter architectures, and 3D web experiences.",
+  description: "Creative software developer specializing in high-performance digital systems, full-stack architectures, and 3D web experiences.",
   openGraph: {
     title: "Rumais P P | Creative Software Developer",
-    description: "Creative software developer specializing in high-performance digital systems, Flutter architectures, and 3D web experiences.",
+    description: "Creative software developer specializing in high-performance digital systems, full-stack architectures, and 3D web experiences.",
     type: "website",
   },
 };
@@ -32,7 +33,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${syne.variable} ${jakarta.variable} ${jetbrainsMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Cursor />
+        <div className="noise-overlay"></div>
+        {children}
+      </body>
     </html>
   );
 }

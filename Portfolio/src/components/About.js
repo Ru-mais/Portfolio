@@ -3,7 +3,7 @@ export default function About() {
     {
       num: "01",
       title: "Systems Precision",
-      desc: "Architecting clean, type-safe, and scalable codebases in Flutter, TypeScript, and Node.js with production reliability."
+      desc: "Architecting clean, type-safe, and scalable codebases in TypeScript, Next.js, and Node.js with production reliability."
     },
     {
       num: "02",
@@ -39,7 +39,7 @@ export default function About() {
             storytelling.
           </p>
           <p className="font-jakarta text-textSecondary text-base md:text-lg max-w-2xl leading-relaxed">
-            Whether developing offline-first retail ERPs with Flutter, crafting web-based 3D
+            Whether developing robust enterprise web applications, crafting web-based 3D
             interfaces with React, or building intelligent full-stack applications with Next.js, I
             focus on zero-compromise speed, intuitive ergonomics, and unmistakable visual identity.
           </p>

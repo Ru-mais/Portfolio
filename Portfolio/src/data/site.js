@@ -6,7 +6,7 @@ export const site = {
     name: 'Rumais P P',
     title: 'Rumais P P | Creative Software Developer',
     description:
-        'Creative software developer building immersive web and mobile experiences with Flutter, modern frontend frameworks, and the MERN stack.',
+        'Creative software developer building immersive web experiences with modern frontend frameworks and the MERN stack.',
     siteUrl: rawUrl,
     contactEmail,
     formspreeId,
