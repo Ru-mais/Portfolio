@@ -37,19 +37,19 @@ export default function Skills() {
     <section id="skills" ref={containerRef} className="py-32 px-6 md:px-12 max-w-[1600px] mx-auto w-full border-t border-textMain/10 relative z-10">
       <div className="section-header-row flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-24 pb-8 relative z-20">
         <div>
-          <p className="font-mono text-xs tracking-[0.2em] text-accent uppercase mb-4 font-bold">
+          <div className="font-mono text-xs tracking-[0.2em] text-accent uppercase mb-4 font-bold">
             <TextReveal>[ 06 // TECHNICAL SPECIFICATIONS ]</TextReveal>
-          </p>
+          </div>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-syne font-medium tracking-tight text-textMain uppercase">
             <TextReveal delay={0.1}>System Architecture</TextReveal>
           </h2>
         </div>
         <div className="max-w-sm text-left md:text-right">
-          <TextReveal delay={0.2}>
-            <p className="text-sm md:text-base font-jakarta text-textSecondary">
-              A high-performance technical stack optimized for scalability, resilience, and fluid user experiences.
-            </p>
-          </TextReveal>
+          <div className="text-sm md:text-base font-jakarta text-textSecondary">
+            <TextReveal delay={0.2}>
+              <span className="block">A high-performance technical stack optimized for scalability, resilience, and fluid user experiences.</span>
+            </TextReveal>
+          </div>
         </div>
       </div>
 

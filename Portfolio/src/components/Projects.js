@@ -70,20 +70,20 @@ export default function Projects() {
       <section id="projects" ref={containerRef} className="py-32 px-6 md:px-12 max-w-[1600px] mx-auto w-full border-t border-textMain/10 relative z-10">
         <div className="section-header-row flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 border-b border-textMain/10 pb-8">
           <div>
-            <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4 opacity-80">
+            <div className="font-mono text-xs tracking-widest text-accent uppercase mb-4 opacity-80">
               <TextReveal>[ 02 // SELECTED EXHIBITION ]</TextReveal>
-            </p>
+            </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-syne font-medium tracking-tight text-textMain uppercase">
               <TextReveal delay={0.1}>Featured Products</TextReveal><br className="hidden md:block"/>
               <TextReveal delay={0.2}>& Systems</TextReveal>
             </h2>
           </div>
           <div className="max-w-sm text-left md:text-right">
-            <TextReveal delay={0.3}>
-              <p className="text-sm md:text-base font-jakarta text-textSecondary">
-                A curated index of production applications, experimental 3D web spaces, and cross-platform tools.
-              </p>
-            </TextReveal>
+            <div className="text-sm md:text-base font-jakarta text-textSecondary">
+              <TextReveal delay={0.3}>
+                <span className="block">A curated index of production applications, experimental 3D web spaces, and cross-platform tools.</span>
+              </TextReveal>
+            </div>
           </div>
         </div>
 
