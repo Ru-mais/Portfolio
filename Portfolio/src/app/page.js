@@ -5,10 +5,10 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
+import CodePhilosophy from '@/components/CodePhilosophy';
 import Services from '@/components/Services';
-import Experience from '@/components/Experience';
+import Journey from '@/components/Journey';
 import Skills from '@/components/Skills';
-import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import AnimeBackground from '@/components/AnimeBackground';
 
@@ -40,10 +40,10 @@ export default function Home() {
         <Hero />
         <Projects />
         <About />
+        <CodePhilosophy />
         <Services />
-        <Experience />
+        <Journey />
         <Skills />
-        <Education />
         <Contact />
       </main>
     </div>

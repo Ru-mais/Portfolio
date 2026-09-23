@@ -99,7 +99,7 @@ export default function Hero() {
       </div>
 
       <section id="hero" aria-labelledby="hero-title" className="min-h-screen pt-24 md:pt-[12vh] pb-12 flex flex-col justify-between">
-        <div className="hero-split-grid w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 lg:items-center flex-1">
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-8 lg:items-center flex-1">
           
           {/* Left Column: Asymmetric Typography & Action */}
           <div className="hero-left-content pr-0 lg:pr-12">
@@ -108,7 +108,7 @@ export default function Hero() {
               SPEC: FULL-STACK & SOFTWARE ENGINEER // 2026
             </div>
             
-            <h1 id="hero-title" className="text-5xl md:text-6xl lg:text-[5.5rem] font-syne font-bold leading-[1.05] tracking-tight uppercase mb-8 text-textMain text-shadow-sm">
+            <h1 id="hero-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-syne font-bold leading-[1.05] tracking-tight uppercase mb-8 text-textMain text-shadow-sm">
               CRAFTING <em className="not-italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/80 font-serif font-light">IMMERSIVE</em> DIGITAL SYSTEMS.
             </h1>
             

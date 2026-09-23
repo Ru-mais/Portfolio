@@ -68,7 +68,7 @@ export default function Projects() {
   return (
     <>
       <section id="projects" ref={containerRef} className="py-32 px-6 md:px-12 max-w-[1600px] mx-auto w-full border-t border-textMain/10 relative z-10">
-        <div className="section-header-row flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 border-b border-textMain/10 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16 border-b border-textMain/10 pb-8">
           <div>
             <div className="font-mono text-xs tracking-widest text-accent uppercase mb-4 opacity-80">
               <TextReveal>[ 02 // SELECTED EXHIBITION ]</TextReveal>
@@ -78,7 +78,7 @@ export default function Projects() {
               <TextReveal delay={0.2}>& Systems</TextReveal>
             </h2>
           </div>
-          <div className="max-w-sm text-left md:text-right">
+          <div className="max-w-sm text-left lg:text-right">
             <div className="text-sm md:text-base font-jakarta text-textSecondary">
               <TextReveal delay={0.3}>
                 <span className="block">A curated index of production applications, experimental 3D web spaces, and cross-platform tools.</span>
@@ -103,7 +103,7 @@ export default function Projects() {
                     <span key={tag} className="font-mono text-[10px] text-textSecondary uppercase tracking-widest border border-textMain/10 px-3 py-1 rounded-full bg-textMain/5">{tag}</span>
                   ))}
                 </div>
-                <div className="flex justify-end items-center mt-8 border-t border-textMain/10 pt-6 pointer-events-auto">
+                <div className="flex justify-end items-center mt-8 border-t border-textMain/10 pt-6 pointer-events-auto gap-4">
                   {project.link && (
                     <a 
                       href={project.link} 
@@ -113,6 +113,17 @@ export default function Projects() {
                       className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
                     >
                       Source Code ↗
+                    </a>
+                  )}
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
+                    >
+                      Live Link ↗
                     </a>
                   )}
                 </div>
@@ -149,7 +160,7 @@ export default function Projects() {
               </div>
             </div>
             
-            <div className="overlay-right w-full md:w-[45%] h-full p-8 md:p-12 lg:p-16 overflow-y-auto flex flex-col justify-start custom-scrollbar">
+            <div className="overlay-right w-full md:w-[45%] flex-1 md:h-full p-8 md:p-12 lg:p-16 overflow-y-auto flex flex-col justify-start custom-scrollbar">
               <p className="font-mono text-[10px] tracking-[0.2em] text-[#FF5500] uppercase mb-4 font-bold">[ SPECIFICATION DOSSIER ]</p>
               <h2 id="overlay-title" className="text-4xl lg:text-5xl font-syne font-medium tracking-tight text-textMain uppercase mb-6">{activeProject.title}</h2>
               <div id="overlay-tags" className="tags flex flex-wrap gap-2 mb-10">
@@ -177,9 +188,16 @@ export default function Projects() {
                 </div>
               </div>
 
-              <a href={activeProject.link} target="_blank" rel="noopener noreferrer" className="primary-btn flex items-center justify-center gap-3 px-8 py-4 bg-textMain text-[#EAE8E1] font-mono text-xs uppercase tracking-widest hover:bg-[#FF5500] hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm mt-auto self-start w-full md:w-auto">
-                Open Repository ↗
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto w-full">
+                <a href={activeProject.link} target="_blank" rel="noopener noreferrer" className="primary-btn flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-textMain text-[#EAE8E1] font-mono text-xs uppercase tracking-widest hover:bg-[#FF5500] hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm">
+                  Open Repository ↗
+                </a>
+                {activeProject.liveLink && (
+                  <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer" className="secondary-btn flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-textMain/20 text-textMain font-mono text-xs uppercase tracking-widest hover:bg-white/5 hover:border-textMain/40 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm">
+                    Live Preview ↗
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

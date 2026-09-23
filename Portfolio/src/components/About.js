@@ -19,17 +19,17 @@ export default function About() {
 
   return (
     <section id="about" className="py-32 px-6 md:px-12 max-w-[1600px] mx-auto w-full relative z-10 border-t border-white/5">
-      <div className="section-header-row flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 border-b border-white/5 pb-8">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16 border-b border-white/5 pb-8">
         <div>
           <p className="font-mono text-xs tracking-widest text-textSecondary uppercase mb-4 opacity-80">[ 03 // PERSONAL IDENTITY & PHILOSOPHY ]</p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-syne font-medium tracking-tight text-textMain uppercase">Who I Am & How I Build</h2>
         </div>
-        <p className="text-sm md:text-base font-jakarta text-textSecondary max-w-sm text-left md:text-right">
+        <p className="text-sm md:text-base font-jakarta text-textSecondary max-w-sm text-left lg:text-right">
           Balancing obsessive attention to visual craft with deep algorithmic and architectural fundamentals.
         </p>
       </div>
 
-      <div className="about-bento grid grid-cols-1 lg:grid-cols-12 gap-4 auto-rows-min">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-min">
         <div className="about-main-card col-span-1 lg:col-span-8 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,85,0,0.05)_0%,_transparent_60%)] bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden group hover:border-white/20 transition-colors duration-500">
           <span className="font-mono text-[10px] text-accent tracking-widest uppercase block mb-8 font-bold">[ MANIFESTO // 2026 ]</span>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-syne font-medium text-textMain mb-6 leading-[1.1] max-w-2xl">Engineering rigor meets creative intuition.</h3>
