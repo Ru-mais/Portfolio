@@ -1,31 +1,52 @@
 export const experience = [
     {
         id: 1,
-        year: "2025 - Present",
-        role: "Freelance Creative Developer",
-        company: "Independent",
-        description: "Building production-grade web and mobile applications for clients, focusing on full-stack MERN systems, AI-integrated platforms, and interactive 3D web experiences."
+        year: "Oct 2025 - Apr 2026",
+        role: "Web Developer - Project-Based",
+        company: "Rizz | Edusphere Project",
+        description: "Worked on an e-learning platform, developing responsive user interfaces using React.js, Vite, and Tailwind CSS. Built course browsing and authentication screens, and created reusable UI components with React Router.",
+        skills: ["React.js", "Vite", "Tailwind CSS", "React Router"]
+    },
+    {
+        id: 2,
+        year: "2026 (3 months)",
+        role: "Freelance Web Developer",
+        company: "Heal Sugar",
+        description: "Customized Shopify storefront elements using Liquid, HTML, CSS, and JavaScript. Contributed to responsive UI improvements, theme customization, and refined storefront usability to align with brand requirements.",
+        skills: ["Shopify Liquid", "JavaScript", "HTML", "CSS"]
     }
 ];
 
 export const services = [
     {
         id: 1,
-        title: "Experimental 3D Design",
-        icon: "cubic",
-        description: "Pushing the boundaries of what's possible on the web with modern frameworks, high-performance UIs, and immersive interactions."
+        title: "Full-Stack Engineering",
+        icon: "stack",
+        description: " End-to-end digital product development. Architecting scalable, robust, and secure web applications from the database to the user interface."
     },
     {
         id: 2,
-        title: "Scalable Web Systems",
-        icon: "mobile",
-        description: "Crafting robust, high-performance scalable web applications and enterprise systems using Next.js and Node."
+        title: "Frontend Architecture",
+        icon: "cubic",
+        description: " Building lightning-fast, highly responsive web applications using Next.js and React with a focus on immersive interactive experiences."
     },
     {
         id: 3,
-        title: "Intelligent Systems",
+        title: "Backend Systems",
+        icon: "server",
+        description: " Designing resilient server-side logic, custom REST APIs, and database architectures optimized for speed and large-scale data handling."
+    },
+    {
+        id: 4,
+        title: "AI Engineering & ML",
         icon: "brain",
-        description: "Integrating AI and Machine Learning models to create smart, data-driven applications that solve real-world problems."
+        description: "   Implementing predictive models, machine learning algorithms, and intelligent logic into modern, data-driven web products."
+    },
+    {
+        id: 5,
+        title: "Digital Growth & SEO",
+        icon: "chart",
+        description: " Driving visibility and organic traffic through advanced search engine optimization, performance auditing, and modern marketing strategies."
     }
 ];
 

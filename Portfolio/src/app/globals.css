@@ -197,30 +197,7 @@ body::after {
 }
 
 /* Header & Navigation */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1.25rem 5%;
-    background: transparent;
-    z-index: 100;
-    pointer-events: none;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 0.75rem 1.75rem;
-    border-radius: 9999px;
-    box-shadow: 0 4px 20px rgba(25, 25, 27, 0.05);
-    pointer-events: auto;
-}
+/* Header & Navigation removed in favor of Tailwind classes */
 
 .nav-brand {
     display: flex;
@@ -249,6 +226,7 @@ nav {
     text-transform: uppercase;
     font-family: var(--font-mono);
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 nav ul {

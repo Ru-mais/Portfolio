@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
+import Experience from '@/components/Experience';
 import CodePhilosophy from '@/components/CodePhilosophy';
 import Services from '@/components/Services';
 import Journey from '@/components/Journey';
@@ -40,6 +41,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <About />
+        <Experience />
         <CodePhilosophy />
         <Services />
         <Journey />

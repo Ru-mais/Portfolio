@@ -94,7 +94,7 @@ export default function Hero() {
           <div className="overlay-bar absolute bottom-0 left-0 w-full h-[2px] bg-accent origin-left animate-pulse"></div>
         </div>
         <div className="loader-sub text-xs md:text-sm font-mono tracking-widest text-textSecondary uppercase">
-          [ CREATIVE TECHNOLOGIST // 2026 ]
+          [ SOFTWARE ENGINEER & AI SPECIALIST // 2026 ]
         </div>
       </div>
 
@@ -105,16 +105,16 @@ export default function Hero() {
           <div className="hero-left-content pr-0 lg:pr-12">
             <div className="hero-spec-tag flex items-center gap-3 font-mono text-xs tracking-widest text-textSecondary uppercase mb-8 border border-white/10 w-max px-4 py-2 bg-white/5 backdrop-blur-md rounded-full shadow-lg">
               <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--accent-color)] animate-pulse"></span>
-              SPEC: FULL-STACK & SOFTWARE ENGINEER // 2026
+              SPEC: SOFTWARE ENGINEER & AI SPECIALIST // 2026
             </div>
             
             <h1 id="hero-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-syne font-bold leading-[1.05] tracking-tight uppercase mb-8 text-textMain text-shadow-sm">
-              CRAFTING <em className="not-italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/80 font-serif font-light">IMMERSIVE</em> DIGITAL SYSTEMS.
+              CRAFTING <em className="not-italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/80 font-serif font-light">INTELLIGENT</em> DIGITAL SYSTEMS.
             </h1>
             
             <p className="hero-desc text-lg md:text-xl leading-relaxed text-textSecondary max-w-xl font-light mb-12">
-              Creative engineer specializing in <strong className="font-semibold text-textMain">full-stack web architectures</strong>, 
-              <strong className="font-semibold text-textMain">complex interactive frontend systems</strong>, and high-performance <strong className="font-semibold text-textMain">scalable web products</strong> with tactile precision.
+              Creative engineer specializing in <strong className="font-semibold text-textMain">scalable full-stack architectures</strong>, 
+              <strong className="font-semibold text-textMain"> complex interactive frontends</strong>, and implementing <strong className="font-semibold text-textMain">predictive ML models & AI logic</strong> to build smart, data-driven web products.
             </p>
             
             <div className="hero-btns flex flex-col sm:flex-row gap-6">

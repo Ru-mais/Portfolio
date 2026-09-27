@@ -16,8 +16,8 @@ module.exports = {
         background: 'var(--bg-color)',
         surface: 'var(--surface-color)',
         surfaceHover: 'var(--surface-hover)',
-        textMain: 'var(--text-main)',
-        textSecondary: 'var(--text-secondary)',
+        textMain: 'var(--text-color)',
+        textSecondary: 'var(--text-muted)',
         accent: 'var(--accent-color)',
       },
       keyframes: {

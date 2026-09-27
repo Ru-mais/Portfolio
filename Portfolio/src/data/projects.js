@@ -26,7 +26,7 @@ export const projects = [
         description: "Intelligent productivity and mentorship platform powered by advanced AI to bridge the gap between learning and implementation.",
         tags: ["Python", "Django", "OpenAI", "Tailwind"],
         link: "https://github.com/Ru-mais/Mentear-AI",
-        liveLink: "https://mentear-ai-demo.vercel.app/",
+        liveLink: "https://menter-ai.vercel.app/",
         image: "/projects/mentear.png",
         role: "Full-Stack Engineer",
         challenge: "Integrating complex AI reasoning chains into a low-latency web architecture for real-time mentorship.",
