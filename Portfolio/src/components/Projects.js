@@ -42,27 +42,32 @@ export default function Projects() {
 
   const openOverlay = (project, e) => {
     if (e) e.preventDefault();
-    console.log("Opening overlay for:", project.title);
     setActiveProject(project);
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = 'hidden';
-    }
   };
 
   const closeOverlay = () => {
     setActiveProject(null);
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = '';
-    }
   };
 
-  // Handle escape key
+  // Lock body scroll and handle escape key when overlay is open
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    if (activeProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && activeProject) closeOverlay();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [activeProject]);
 
   return (
@@ -103,29 +108,36 @@ export default function Projects() {
                     <span key={tag} className="font-mono text-[10px] text-textSecondary uppercase tracking-widest border border-textMain/10 px-3 py-1 rounded-full bg-textMain/5">{tag}</span>
                   ))}
                 </div>
-                <div className="flex justify-end items-center mt-8 border-t border-textMain/10 pt-6 pointer-events-auto gap-4">
-                  {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
-                    >
-                      Source Code ↗
-                    </a>
-                  )}
-                  {project.liveLink && (
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
-                    >
-                      Live Link ↗
-                    </a>
-                  )}
+                <div className="flex justify-between items-center mt-8 border-t border-textMain/10 pt-6 pointer-events-auto gap-4">
+                  {project.password ? (
+                    <span className="font-mono text-[10px] tracking-wider text-[#FF5500] uppercase font-bold flex items-center gap-1.5 bg-[#FF5500]/10 px-2.5 py-1 rounded-full border border-[#FF5500]/20">
+                      PW: <span className="text-textMain tracking-widest">{project.password}</span>
+                    </span>
+                  ) : <div />}
+                  <div className="flex items-center gap-4">
+                    {project.link && (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
+                      >
+                        Source Code ↗
+                      </a>
+                    )}
+                    {project.liveLink && (
+                      <a 
+                        href={project.liveLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="nav-spec font-mono text-[10px] text-textSecondary uppercase tracking-widest hover:text-[#FF5500] transition-colors no-underline relative z-20 flex items-center gap-2"
+                      >
+                        Live Link ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -177,7 +189,7 @@ export default function Projects() {
                 <p id="overlay-outcome" className="font-jakarta text-sm leading-relaxed text-textMain/80">{activeProject.outcome}</p>
               </div>
 
-              <div className="flex gap-8 my-2 pt-6 border-t border-textMain/10 mb-10">
+              <div className="flex flex-wrap gap-8 my-2 pt-6 border-t border-textMain/10 mb-8">
                 <div>
                   <span className="font-mono text-[10px] tracking-[0.2em] text-textSecondary uppercase mb-2 block">ROLE</span>
                   <span className="font-mono text-xs font-bold text-textMain">{activeProject.role}</span>
@@ -186,7 +198,23 @@ export default function Projects() {
                   <span className="font-mono text-[10px] tracking-[0.2em] text-textSecondary uppercase mb-2 block">STATUS</span>
                   <span className="font-mono text-xs font-bold text-[#FF5500]">PRODUCTION-READY</span>
                 </div>
+                {activeProject.password && (
+                  <div>
+                    <span className="font-mono text-[10px] tracking-[0.2em] text-textSecondary uppercase mb-2 block">STORE PASSWORD</span>
+                    <span className="font-mono text-xs font-bold text-textMain tracking-widest bg-textMain/5 px-2.5 py-1 rounded border border-textMain/15 select-all">{activeProject.password}</span>
+                  </div>
+                )}
               </div>
+
+              {activeProject.password && (
+                <div className="mb-6 p-3.5 rounded-xl border border-[#FF5500]/25 bg-[#FF5500]/5 flex items-center justify-between text-xs font-mono text-textMain">
+                  <span className="flex items-center gap-2">
+                    <span className="text-sm">🔑</span>
+                    <span>Storefront Password: <strong className="text-[#FF5500] tracking-widest px-1.5 py-0.5 rounded bg-[#FF5500]/10 border border-[#FF5500]/30 select-all">{activeProject.password}</strong></span>
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-textSecondary opacity-80">Required on entry</span>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4 mt-auto w-full">
                 <a href={activeProject.link} target="_blank" rel="noopener noreferrer" className="primary-btn flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-textMain text-[#EAE8E1] font-mono text-xs uppercase tracking-widest hover:bg-[#FF5500] hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm">

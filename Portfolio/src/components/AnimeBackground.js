@@ -130,8 +130,8 @@ export default function AnimeBackground() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('mousemove', handleMouseMove);
-            if (bgRef.current) {
-                bgRef.current.innerHTML = '';
+            if (container) {
+                container.innerHTML = '';
             }
         };
     }, []);

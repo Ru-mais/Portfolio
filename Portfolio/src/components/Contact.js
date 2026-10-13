@@ -53,10 +53,18 @@ export default function Contact() {
       <p className="section-label">[ 08 // DISPATCH & TRANSMISSION ]</p>
       <h2 id="contact-heading" style={{ textAlign: 'center', marginBottom: '2rem' }}>Initialize Connection</h2>
       <p style={{ maxWidth: '36rem', margin: '0 auto 2.5rem', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
-        Have an experimental project, cross-platform engineering challenge, or creative development inquiry? Let's build something extraordinary.
+        Have a bespoke Shopify storefront project, high-converting e-commerce challenge, full-stack build, or creative development inquiry? Let&apos;s build something extraordinary.
       </p>
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+      {/* Availability Telemetry Badge */}
+      <div className="flex items-center justify-center gap-2.5 mb-6">
+        <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse"></span>
+        <span className="font-mono text-[11px] tracking-widest uppercase text-textSecondary">
+          Available for Bespoke Shopify Commissions & Full-Stack Contracts // 2026
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
         <button
           type="button"
           onClick={handleCopyEmail}
@@ -65,6 +73,7 @@ export default function Contact() {
         >
           {copied ? '✓ COPIED TO CLIPBOARD' : `COPY: ${site.contactEmail || 'EMAIL'}`}
         </button>
+
         {!showForm && status === 'idle' && (
           <button type="button" onClick={() => setShowForm(true)} className="primary-btn">
             Open Message Terminal →
@@ -73,10 +82,10 @@ export default function Contact() {
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }} className="font-mono text-xs uppercase tracking-widest text-textSecondary">
+        <a href="https://wa.me/971502640302?text=Hello%20Rumais!%20I'm%20interested%20in%20discussing%20a%20project." target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5500] transition-colors border-b border-transparent hover:border-[#FF5500]">WhatsApp ↗</a>
         <a href="https://www.linkedin.com/in/rumais-pp-" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5500] transition-colors border-b border-transparent hover:border-[#FF5500]">LinkedIn</a>
         <a href="https://github.com/Ru-mais" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5500] transition-colors border-b border-transparent hover:border-[#FF5500]">GitHub</a>
         <a href="https://instagram.com/_rumais____" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5500] transition-colors border-b border-transparent hover:border-[#FF5500]">Instagram</a>
-        <a href="https://wa.me/971502640302?text=Hello%20Rumais!%20I'm%20interested%20in%20discussing%20a%20project." target="_blank" rel="noopener noreferrer" className="hover:text-[#FF5500] transition-colors border-b border-transparent hover:border-[#FF5500]">WhatsApp</a>
       </div>
 
       {(showForm || status !== 'idle') && (

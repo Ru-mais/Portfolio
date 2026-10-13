@@ -10,8 +10,11 @@ import CodePhilosophy from '@/components/CodePhilosophy';
 import Services from '@/components/Services';
 import Journey from '@/components/Journey';
 import Skills from '@/components/Skills';
+import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import AnimeBackground from '@/components/AnimeBackground';
+import ResumeModal from '@/components/ResumeModal';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   useEffect(() => {
@@ -46,8 +49,11 @@ export default function Home() {
         <Services />
         <Journey />
         <Skills />
+        <Education />
         <Contact />
       </main>
+      <Footer />
+      <ResumeModal />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { openResumeModal } from '@/components/ResumeModal';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -61,7 +62,17 @@ export default function Header() {
             <li><a href="#projects" className="font-mono text-xs font-bold tracking-widest hover:text-secondary transition-colors">02 // WORK</a></li>
             <li><a href="#about" className="font-mono text-xs font-bold tracking-widest hover:text-secondary transition-colors">03 // ABOUT</a></li>
             <li><a href="#contact" className="font-mono text-xs font-bold tracking-widest hover:text-secondary transition-colors">04 // CONTACT</a></li>
-            <li><span className="font-mono text-[10px] tracking-widest text-text-muted border border-glass-border px-3 py-1 rounded-sm bg-black/5">SYS.2026</span></li>
+            <li>
+              <button
+                type="button"
+                onClick={openResumeModal}
+                className="font-mono text-[10px] tracking-widest text-[#FF5500] hover:text-white hover:bg-[#FF5500] border border-[#FF5500]/30 hover:border-[#FF5500] px-3 py-1 rounded-sm bg-[#FF5500]/5 transition-all duration-200 cursor-pointer flex items-center gap-1.5"
+                title="Preview Resume Dossier"
+              >
+                <span>DOSSIER</span>
+                <span>👁</span>
+              </button>
+            </li>
           </ul>
 
           {/* Mobile Menu Button - Sleek Pill Integration */}
@@ -100,9 +111,18 @@ export default function Header() {
           <li ref={el => linksRef.current[3] = el}>
             <a href="#contact" onClick={closeMenu} className="hover:text-secondary transition-colors">04 // Contact</a>
           </li>
+          <li ref={el => linksRef.current[4] = el}>
+            <button
+              type="button"
+              onClick={() => { closeMenu(); openResumeModal(); }}
+              className="hover:text-secondary transition-colors bg-transparent border-none font-syne text-3xl sm:text-4xl font-medium uppercase tracking-widest text-[#FF5500] cursor-pointer"
+            >
+              05 // Dossier [ 👁 ]
+            </button>
+          </li>
         </ul>
         <div 
-          ref={el => linksRef.current[4] = el}
+          ref={el => linksRef.current[5] = el}
           className="mt-16 font-mono text-xs tracking-widest text-secondary border border-secondary/20 px-6 py-2 rounded-full bg-secondary/5"
         >
           SYS.2026 // RUMAIS P P

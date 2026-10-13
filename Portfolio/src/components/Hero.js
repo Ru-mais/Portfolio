@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { openResumeModal } from '@/components/ResumeModal';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +95,7 @@ export default function Hero() {
           <div className="overlay-bar absolute bottom-0 left-0 w-full h-[2px] bg-accent origin-left animate-pulse"></div>
         </div>
         <div className="loader-sub text-xs md:text-sm font-mono tracking-widest text-textSecondary uppercase">
-          [ SOFTWARE ENGINEER & AI SPECIALIST // 2026 ]
+          [ FULL-STACK & SHOPIFY DEVELOPER // 2026 ]
         </div>
       </div>
 
@@ -105,7 +106,7 @@ export default function Hero() {
           <div className="hero-left-content pr-0 lg:pr-12">
             <div className="hero-spec-tag flex items-center gap-3 font-mono text-xs tracking-widest text-textSecondary uppercase mb-8 border border-white/10 w-max px-4 py-2 bg-white/5 backdrop-blur-md rounded-full shadow-lg">
               <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--accent-color)] animate-pulse"></span>
-              SPEC: SOFTWARE ENGINEER & AI SPECIALIST // 2026
+              SPEC: FULL-STACK ENGINEER & SHOPIFY SPECIALIST // 2026
             </div>
             
             <h1 id="hero-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-syne font-bold leading-[1.05] tracking-tight uppercase mb-8 text-textMain text-shadow-sm">
@@ -113,17 +114,33 @@ export default function Hero() {
             </h1>
             
             <p className="hero-desc text-lg md:text-xl leading-relaxed text-textSecondary max-w-xl font-light mb-12">
-              Creative engineer specializing in <strong className="font-semibold text-textMain">scalable full-stack architectures</strong>, 
-              <strong className="font-semibold text-textMain"> complex interactive frontends</strong>, and implementing <strong className="font-semibold text-textMain">predictive ML models & AI logic</strong> to build smart, data-driven web products.
+              Creative engineer specializing in <strong className="font-semibold text-textMain">bespoke Shopify storefronts</strong>, 
+              <strong className="font-semibold text-textMain"> scalable full-stack architectures</strong>, <strong className="font-semibold text-textMain">complex interactive frontends</strong>, and <strong className="font-semibold text-textMain">intelligent digital systems</strong>.
             </p>
             
-            <div className="hero-btns flex flex-col sm:flex-row gap-6">
+            <div className="hero-btns flex flex-col sm:flex-row gap-4 sm:gap-5">
               <a href="#projects" className="primary-btn flex items-center justify-center gap-3 px-8 py-4 bg-textMain text-background font-mono text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-sm">
                 Explore Selected Works <span>→</span>
               </a>
-              <a id="cv-link" className="secondary-btn flex items-center justify-center px-8 py-4 bg-transparent text-textMain border border-textMain/20 font-mono text-xs uppercase tracking-widest hover:bg-white/5 hover:border-textMain/40 transition-all duration-300 rounded-sm" href="/resume.pdf">
-                Download Full Dossier
-              </a>
+              <div className="flex items-center gap-2">
+                <button 
+                  id="cv-link"
+                  type="button" 
+                  onClick={openResumeModal}
+                  className="secondary-btn flex-1 sm:flex-initial flex items-center justify-center gap-2.5 px-7 py-4 bg-transparent text-textMain border border-textMain/20 font-mono text-xs uppercase tracking-widest hover:bg-white/5 hover:border-textMain/40 transition-all duration-300 rounded-sm cursor-pointer"
+                >
+                  <span>Preview Dossier</span>
+                  <span className="text-[11px] text-[#FF5500]">👁</span>
+                </button>
+                <a
+                  href="/resume.pdf"
+                  download="Rumais_PP_Resume.pdf"
+                  title="Direct PDF Download"
+                  className="hidden sm:flex items-center justify-center w-12 h-12 border border-textMain/20 hover:border-textMain/40 hover:bg-white/5 text-textMain rounded-sm font-mono text-xs transition-all duration-300"
+                >
+                  ↓
+                </a>
+              </div>
             </div>
           </div>
 
@@ -146,8 +163,8 @@ export default function Hero() {
 
             <div className="dashboard-focus-widget col-span-1 bg-accent/10 p-6 rounded-xl border border-accent/20 flex flex-col justify-between min-h-[140px] relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
               <span className="font-mono text-[10px] text-accent uppercase tracking-widest mb-4 font-bold">CURRENT ACTIVE FOCUS</span>
-              <p className="text-xl font-syne font-medium text-textMain leading-tight mb-2">Datie: Community Dating Platform</p>
-              <span className="font-mono text-[10px] text-textSecondary block mt-auto">Next.js • Node.js • MongoDB • MERN Stack</span>
+              <p className="text-xl font-syne font-medium text-textMain leading-tight mb-2">SALAA: Bespoke Luxury Atelier</p>
+              <span className="font-mono text-[10px] text-textSecondary block mt-auto">Shopify OS 2.0 • Liquid • Vanilla JS • CI/CD</span>
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/20 blur-2xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
             </div>
 
@@ -157,7 +174,7 @@ export default function Hero() {
                 <span className="font-mono text-[9px] uppercase tracking-widest text-textSecondary">Years Craft</span>
               </div>
               <div className="metric-box bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
-                <span className="text-2xl md:text-3xl font-syne font-bold text-textMain mb-1 group-hover:text-accent transition-colors">04+</span>
+                <span className="text-2xl md:text-3xl font-syne font-bold text-textMain mb-1 group-hover:text-accent transition-colors">05+</span>
                 <span className="font-mono text-[9px] uppercase tracking-widest text-textSecondary">Shipped Products</span>
               </div>
               <div className="metric-box bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
@@ -172,16 +189,16 @@ export default function Hero() {
         {/* Seamless Running Marquee Strip */}
         <div className="hero-marquee-strip w-full overflow-hidden whitespace-nowrap mt-24 py-4 border-y border-white/5 bg-white/5 backdrop-blur-md rotate-1 transform-origin-center">
           <div className="hero-marquee-track inline-block font-mono text-[11px] tracking-widest text-textSecondary uppercase animate-[marquee_20s_linear_infinite]">
-            <span className="mx-6">✦ CREATIVE COMPUTING</span>
+            <span className="mx-6">✦ SHOPIFY OS 2.0 & LIQUID</span>
+            <span className="mx-6">✦ BESPOKE STOREFRONTS</span>
+            <span className="mx-6">✦ FULL-STACK ARCHITECTURES</span>
             <span className="mx-6">✦ REACT & NEXT.JS</span>
-            <span className="mx-6">✦ FULL-STACK & SCALABLE WEB ARCHITECTURES</span>
-            <span className="mx-6">✦ FULL-STACK MERN</span>
             <span className="mx-6">✦ AI & INTELLIGENT SYSTEMS</span>
             <span className="mx-6">✦ TYPESCRIPT</span>
-            <span className="mx-6">✦ CREATIVE COMPUTING</span>
+            <span className="mx-6">✦ SHOPIFY OS 2.0 & LIQUID</span>
+            <span className="mx-6">✦ BESPOKE STOREFRONTS</span>
+            <span className="mx-6">✦ FULL-STACK ARCHITECTURES</span>
             <span className="mx-6">✦ REACT & NEXT.JS</span>
-            <span className="mx-6">✦ FULL-STACK & SCALABLE WEB ARCHITECTURES</span>
-            <span className="mx-6">✦ FULL-STACK MERN</span>
             <span className="mx-6">✦ AI & INTELLIGENT SYSTEMS</span>
             <span className="mx-6">✦ TYPESCRIPT</span>
           </div>

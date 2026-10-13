@@ -9,48 +9,65 @@ export const experience = [
     },
     {
         id: 2,
-        year: "2026 (3 months)",
-        role: "Freelance Web Developer",
-        company: "Heal Sugar",
-        description: "Customized Shopify storefront elements using Liquid, HTML, CSS, and JavaScript. Contributed to responsive UI improvements, theme customization, and refined storefront usability to align with brand requirements.",
-        skills: ["Shopify Liquid", "JavaScript", "HTML", "CSS"]
+        year: "2026",
+        role: "Shopify Developer & Theme Engineer",
+        company: "Heal Sugar & Bespoke Storefronts",
+        description: "Architected and customized bespoke Shopify Online Store 2.0 storefront elements using Liquid, JavaScript, HTML5, and CSS3. Engineered custom sections, eliminated third-party app dependencies, and tuned Core Web Vitals to align with brand and merchant requirements.",
+        skills: ["Shopify OS 2.0", "Liquid", "JavaScript", "HTML5", "CSS3", "Theme Check"]
     }
 ];
 
 export const services = [
     {
         id: 1,
-        title: "Full-Stack Engineering",
-        icon: "stack",
-        description: " End-to-end digital product development. Architecting scalable, robust, and secure web applications from the database to the user interface."
+        title: "Shopify & Bespoke E-Commerce",
+        icon: "bag",
+        description: "Full-cycle Shopify Online Store 2.0 theme engineering from the ground up. Architecting modular JSON templates, custom Liquid sections, zero-app-bloat digital storefronts, and sub-second performance optimized for conversions."
     },
     {
         id: 2,
-        title: "Frontend Architecture",
-        icon: "cubic",
-        description: " Building lightning-fast, highly responsive web applications using Next.js and React with a focus on immersive interactive experiences."
+        title: "Full-Stack Engineering",
+        icon: "stack",
+        description: "End-to-end digital product development. Architecting scalable, robust, and secure web applications from the database to the user interface."
     },
     {
         id: 3,
-        title: "Backend Systems",
-        icon: "server",
-        description: " Designing resilient server-side logic, custom REST APIs, and database architectures optimized for speed and large-scale data handling."
+        title: "Frontend Architecture",
+        icon: "cubic",
+        description: "Building lightning-fast, highly responsive web applications using Next.js and React with a focus on immersive interactive experiences."
     },
     {
         id: 4,
-        title: "AI Engineering & ML",
-        icon: "brain",
-        description: "   Implementing predictive models, machine learning algorithms, and intelligent logic into modern, data-driven web products."
+        title: "Backend Systems",
+        icon: "server",
+        description: "Designing resilient server-side logic, custom REST APIs, and database architectures optimized for speed and large-scale data handling."
     },
     {
         id: 5,
-        title: "Digital Growth & SEO",
+        title: "AI Engineering & ML",
+        icon: "brain",
+        description: "Implementing predictive models, machine learning algorithms, and intelligent logic into modern, data-driven web products."
+    },
+    {
+        id: 6,
+        title: "Digital Growth & Store SEO",
         icon: "chart",
-        description: " Driving visibility and organic traffic through advanced search engine optimization, performance auditing, and modern marketing strategies."
+        description: "Driving visibility, organic traffic, and conversion-rate optimization through technical SEO, Core Web Vitals audits, and modern growth strategies."
     }
 ];
 
 export const skillCategories = [
+    {
+        title: "Shopify & E-Commerce",
+        skills: [
+            { name: "Shopify OS 2.0", icon: "shopify" },
+            { name: "Liquid", icon: "liquid" },
+            { name: "Shopify CLI", icon: "cli" },
+            { name: "Theme Check", icon: "check" },
+            { name: "JSON Templates", icon: "json" },
+            { name: "Storefront API", icon: "api" }
+        ]
+    },
     {
         title: "Frontend Development",
         skills: [

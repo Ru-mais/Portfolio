@@ -21,11 +21,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Rumais P P | Creative Software Developer",
-  description: "Creative software developer specializing in high-performance digital systems, full-stack architectures, and 3D web experiences.",
+  title: "Rumais P P | Full-Stack & Shopify Developer",
+  description: "Full-Stack Software Engineer & Shopify Developer specializing in bespoke luxury e-commerce storefronts, high-performance web systems, and intelligent digital architectures.",
   openGraph: {
-    title: "Rumais P P | Creative Software Developer",
-    description: "Creative software developer specializing in high-performance digital systems, full-stack architectures, and 3D web experiences.",
+    title: "Rumais P P | Full-Stack & Shopify Developer",
+    description: "Full-Stack Software Engineer & Shopify Developer specializing in bespoke luxury e-commerce storefronts, high-performance web systems, and intelligent digital architectures.",
     type: "website",
   },
 };

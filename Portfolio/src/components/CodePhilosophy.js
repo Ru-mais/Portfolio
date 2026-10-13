@@ -39,11 +39,11 @@ export default function CodePhilosophy() {
           Do I even code?
         </h3>
         <p className="philosophy-text font-jakarta text-xl md:text-2xl text-textSecondary max-w-3xl leading-relaxed mb-8">
-          I don't just write code. I build systems. My philosophy is simple: engineer for scale, design for humans, and <span className="text-accent font-bold">delete every line of code</span> that doesn't strictly justify its existence.
+          I don&apos;t just write code. I build systems. My philosophy is simple: engineer for scale, design for humans, and <span className="text-accent font-bold">delete every line of code</span> that doesn&apos;t strictly justify its existence.
         </p>
         <div className="philosophy-text flex gap-4 text-sm font-mono tracking-widest uppercase text-[#FF5500] font-bold">
           <span>SLEEP: 404 NOT FOUND</span>
-          <span>//</span>
+          <span>{'//'}</span>
           <span>CAFFEINE: 100%</span>
         </div>
       </div>

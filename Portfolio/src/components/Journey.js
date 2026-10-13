@@ -15,7 +15,7 @@ export default function Journey() {
   const waypoints = [
     { year: "2021 — 2023", title: "Foundation", desc: "12th Grade / Systems Fundamentals & Advanced Mathematics.", bgNumber: "21" },
     { year: "2023 — 2026", title: "Computer Science", desc: "BCA Degree / Data Structures & Software Engineering.", bgNumber: "23" },
-    { year: "2025 — Present", title: "The Now", desc: "Freelance Creative Developer / Building full-stack systems and 3D web applications.", bgNumber: "NOW" }
+    { year: "2025 — Present", title: "The Now", desc: "Full-Stack Engineer & Shopify Developer / Building bespoke luxury e-commerce storefronts, scalable systems, and interactive 3D web applications.", bgNumber: "NOW" }
   ];
 
   useGSAP(() => {

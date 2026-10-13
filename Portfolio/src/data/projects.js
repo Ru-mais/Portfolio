@@ -1,5 +1,18 @@
 export const projects = [
     {
+        title: "SALAA",
+        description: "Bespoke luxury fashion atelier e-commerce theme built from the ground up for high-end editorial aesthetics, sub-second performance, zero third-party app bloat, and full merchant autonomy via Shopify OS 2.0.",
+        tags: ["Shopify OS 2.0", "Liquid", "JavaScript", "CSS3", "Shopify CLI", "CI/CD"],
+        link: "https://github.com/Ru-mais/salaa-shopify",
+        liveLink: "https://rumais-dev-store.myshopify.com/",
+        password: "1234",
+        accessNote: "Storefront Access Password: 1234",
+        image: "/projects/salaa.png",
+        role: "Lead Shopify Developer & Frontend Engineer",
+        challenge: "Architecting a couture editorial storefront with modular JSON templates, native video hero streaming, and zero app dependencies while maintaining 0 Theme Check errors across 160+ files.",
+        outcome: "A high-performance luxury e-commerce theme featuring automated GitHub Actions CI/CD, headless-like fluidity, and complete drag-and-drop customization for merchants."
+    },
+    {
         title: "Legacy",
         description: "A sophisticated, AI-driven portfolio construction platform designed to help users create highly interactive and visually stunning personal websites with 3D elements.",
         tags: ["Next.js", "TypeScript", "React", "GSAP", "Tailwind"],
